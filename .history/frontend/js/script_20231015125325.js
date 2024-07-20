@@ -86,16 +86,13 @@ function closeLightbox() {
 
 // Function to change the image in the lightbox
 function changeImage(direction) {
-   const newIndex =  currentImageIndex + direction;
-    if (newIndex < 0) {
+    currentImageIndex += direction;
+    if (currentImageIndex < 0) {
         currentImageIndex = numImages - 1;
     }
-    else if (newIndex >= numImages) {
+    if (currentImageIndex >= numImages) {
         currentImageIndex = 0;
-    }else{
-        currentImageIndex = newIndex;
     }
-    
     openLightbox(currentImageIndex);
 }
 
